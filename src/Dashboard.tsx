@@ -13,7 +13,6 @@ export const Dashboard = ()=>{
 
     const getAllProducts = async ()=>{
         const products = await fetchAllProducts()
-        console.log('products', products)
         setProductsList(products)
     }
 

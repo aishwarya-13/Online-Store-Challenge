@@ -12,7 +12,7 @@ export const List = ({list}: ListProps)=>{
             {'I am list'}
             {
                 list?.map((product)=>{
-                    return <CardDetail card={product}/>
+                    return <CardDetail key ={product.id} card={product}/>
                 })
             }
         </>

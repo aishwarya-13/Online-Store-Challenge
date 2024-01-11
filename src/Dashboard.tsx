@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { fetchAllProducts } from "./apiClients/productsApiClient/productsApiClient"
-import { Box, Stack, Typography } from "@mui/material"
+import { Box, CircularProgress, Stack, Typography } from "@mui/material"
 import { List } from "./products/list"
 import { Product } from "./products/types"
 import { TITLE_DISPLAY_MESSAGE1, TITLE_DISPLAY_MESSAGE2, TITLE_DISPLAY_MESSAGE3 } from "./constants/string"
@@ -26,7 +26,9 @@ export const Dashboard = ()=>{
     },[])
 
     return(
-        <Box>
+        <>
+            {
+                productsList && productsList.length > 0 ?
             <Stack
                 direction={'row'}
                 height={'99vh'}
@@ -64,6 +66,18 @@ export const Dashboard = ()=>{
                     </Stack>
                 }
             </Stack>
-        </Box>
+            :
+            <CircularProgress
+                id='kkkk'
+                sx={{
+                    color: purple.dark,
+                    position:"absolute",
+                    top:'35%',
+                    left:'50%'
+                }}
+                size={100}
+                thickness={4}/>
+}
+        </>
     )
 }

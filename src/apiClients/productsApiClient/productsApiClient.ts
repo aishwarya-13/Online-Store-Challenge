@@ -8,3 +8,10 @@ export const fetchAllProducts = async ()=>{
     const queryResponse = await fetchWithErrorHandling(productsUrl)
     return queryResponse
 }
+
+export const fetchProductById= async(id: number)=>{
+    const productsUrl = `${host}/products/${id}`
+
+    const queryResponse = await fetchWithErrorHandling(productsUrl)
+    return queryResponse
+}

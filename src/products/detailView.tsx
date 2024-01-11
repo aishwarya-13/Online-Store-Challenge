@@ -15,10 +15,10 @@ export const DetailView = ({selectedCard}:DetailViewProps )=>{
         let html = []
         let limit = Math.round(selectedCard.rating.rate)
         for(let i=0; i<limit; i++){
-            html.push(<StarIcon sx={{fontSize:'20px', color: yellow.middle}}/>)
+            html.push(<StarIcon sx={{fontSize:'20px', color: yellow.middle}} key={`${i}`}/>)
         }
         for(let i=limit; i<5; i++){
-            html.push(<StarIcon sx={{fontSize:'20px', color: grey.dark}}/>)
+            html.push(<StarIcon sx={{fontSize:'20px', color: grey.dark}} key={`${i}`}/>)
         }
         return html
     }
